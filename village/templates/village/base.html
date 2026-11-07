@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#12241f">
+    <meta name="description" content="Découvrez Kédougou : son histoire, ses paysages, ses activités et sa culture.">
+    <title>{% block title %}Découvrir Kédougou{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/atlas.css' %}">
+</head>
+<body class="{% block body_class %}page-interior{% endblock %}">
+    <a class="skip-link" href="#main-content">Aller au contenu</a>
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <header class="site-header">
+        <a class="brand" href="{% url 'home' %}" aria-label="Kédougou, accueil">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><circle class="brand-sun" cx="22.5" cy="9" r="3.2"/><path class="brand-mountain" d="m4 20 7-9 4.2 5.2 2.4-2.8L28 25H4z"/><path class="brand-river" d="M5 25c4-2.2 7.6 2.2 11.5 0s7.5-2.2 10.5-.2"/></svg></span>
+            <span class="brand-copy">KÉDOUGOU<small>ATLAS VIVANT · SÉNÉGAL</small></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Ouvrir le menu">
+            <span></span><span></span>
+        </button>
+        <nav id="primary-navigation" class="primary-navigation" aria-label="Navigation principale">
+            {% url 'home' as home_url %}{% url 'history' as history_url %}{% url 'places' as places_url %}
+            {% url 'activities' as activities_url %}{% url 'gallery' as gallery_url %}{% url 'planner' as planner_url %}
+            {% url 'faq' as faq_url %}{% url 'contact' as contact_url %}
+            <a href="{{ home_url }}" {% if request.path == home_url %}class="active" aria-current="page"{% endif %}>Accueil</a>
+            <a href="{{ history_url }}" {% if request.path == history_url %}class="active" aria-current="page"{% endif %}>Histoire</a>
+            <a href="{{ places_url }}" {% if request.path == places_url %}class="active" aria-current="page"{% endif %}>À visiter</a>
+            <a href="{{ activities_url }}" {% if request.path == activities_url %}class="active" aria-current="page"{% endif %}>Activités</a>
+            <a href="{{ gallery_url }}" {% if request.path == gallery_url %}class="active" aria-current="page"{% endif %}>Galerie</a>
+            <a href="{{ planner_url }}" {% if request.path == planner_url %}class="active" aria-current="page"{% endif %}>Mon séjour</a>
+            <a href="{{ faq_url }}" {% if request.path == faq_url %}class="active" aria-current="page"{% endif %}>FAQ</a>
+            <a href="{{ contact_url }}" {% if request.path == contact_url %}class="active" aria-current="page"{% endif %}>Contact</a>
+            <a class="nav-plan" href="{{ planner_url }}">Préparer mon voyage <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-topline"><span>12°33′ N · 12°11′ O</span><span>Sud-est du Sénégal</span></div>
+        <div class="footer-main">
+            <a class="footer-title" href="{% url 'home' %}">Kédougou<span>Une région à vivre, une histoire à partager.</span></a>
+            <div class="footer-links" aria-label="Liens utiles">
+                <a href="{% url 'places' %}">Explorer</a><a href="{% url 'history' %}">Cultures</a>
+                <a href="{% url 'gallery' %}">Galerie</a><a href="{% url 'planner' %}">Mon séjour</a>
+            </div>
+            <a class="footer-back-top" href="#main-content">Retour en haut ↑</a>
+        </div>
+        <div class="footer-bottom"><span>© 2026 · Découvrir Kédougou</span><span>Voyager avec curiosité et respect.</span></div>
+    </footer>
+
+    <script src="{% static 'js/site.js' %}" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/ScrollTrigger.min.js" defer></script>
+    <script src="{% static 'js/atlas-motion.js' %}" defer></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

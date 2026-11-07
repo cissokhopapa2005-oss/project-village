@@ -1,0 +1,85 @@
+{% extends 'village/base.html' %}
+{% load static %}
+
+{% block title %}Planifier mon séjour - Kédougou{% endblock %}
+{% block body_class %}page-planner{% endblock %}
+
+{% block content %}
+    <section class="page-heading" data-reveal>
+        <p class="eyebrow">VOTRE VOYAGE, À VOTRE RYTHME</p>
+        <h1>Imaginez votre séjour à Kédougou</h1>
+        <p>Choisissez la durée et les expériences qui vous intéressent pour obtenir quelques idées de programme, à adapter avec les informations locales.</p>
+    </section>
+
+    <section class="planner-layout">
+        <form class="planner-form"
+              data-places-url="{% url 'places' %}"
+              data-activities-url="{% url 'activities' %}"
+              data-history-url="{% url 'history' %}">
+            <p class="planner-step-label"><span>01</span> COMPOSEZ VOTRE ESCALE</p>
+            <fieldset class="planner-duration" aria-describedby="planner-duration-hint">
+                <legend>Combien de jours ?</legend>
+                <p class="planner-hint" id="planner-duration-hint">Choisissez le rythme de votre séjour.</p>
+                <div class="planner-duration-options">
+                    <label><input type="radio" name="duration" value="1" checked><span><strong>01</strong><small>jour</small></span></label>
+                    <label><input type="radio" name="duration" value="2"><span><strong>02</strong><small>jours</small></span></label>
+                    <label><input type="radio" name="duration" value="3"><span><strong>03</strong><small>jours</small></span></label>
+                </div>
+            </fieldset>
+
+            <fieldset class="planner-interests" aria-describedby="planner-interest-hint">
+                <legend>Qu’aimeriez-vous découvrir ?</legend>
+                <p class="planner-hint" id="planner-interest-hint">Choisissez au moins un thème.</p>
+                <div class="planner-interest-options">
+                    <label class="interest-nature">
+                        <input type="checkbox" name="interest" value="nature" checked>
+                        <span><svg class="interest-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 4.5C11 4.3 5.4 7 5 12.2c-.3 3.1 1.8 5.3 4.8 5.2 5.2-.2 8.2-5.9 9.7-12.9Z"/><path d="M4 21c2.7-5.1 6.4-8.4 12-11"/></svg><span class="interest-copy">Nature et cascades</span></span>
+                    </label>
+                    <label class="interest-culture">
+                        <input type="checkbox" name="interest" value="culture" checked>
+                        <span><svg class="interest-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20c.6-4 2.9-6 7-6s6.4 2 7 6M4 7h2m12 0h2M12 2v1"/></svg><span class="interest-copy">Culture et patrimoine</span></span>
+                    </label>
+                    <label class="interest-hiking">
+                        <input type="checkbox" name="interest" value="hiking" checked>
+                        <span><svg class="interest-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 19 6.2-11 3.1 5.2 2.1-3.4L21 19H3Z"/><path d="m8.4 19 3-5.3 2.5 1.2"/></svg><span class="interest-copy">Randonnée et paysages</span></span>
+                    </label>
+                    <label class="interest-food">
+                        <input type="checkbox" name="interest" value="food" checked>
+                        <span><svg class="interest-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16c-.5 5-3.2 8-8 8s-7.5-3-8-8Z"/><path d="M6 9c1.2-1 2.2-1 3.4 0s2.2 1 3.4 0 2.2-1 3.4 0 2.2 1 3.4 0M8 5l1 1m6-2v2"/></svg><span class="interest-copy">Cuisine locale</span></span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <button class="button planner-submit" type="submit">Composer mon séjour <span aria-hidden="true">→</span></button>
+        </form>
+
+        <aside class="planner-aside" aria-label="Préparer son séjour">
+            <img src="{% static 'images/observer-paysages.jpg' %}" alt="Vallée verdoyante encadrée de falaises de grès" loading="lazy">
+            <div class="planner-aside-copy">
+                <p class="eyebrow">PRENDRE LE TEMPS</p>
+                <h2>Le bon voyage est celui qui laisse place à l’imprévu.</h2>
+                <p>Les accès et les disponibilités varient selon la saison. Confirmez les conditions auprès des guides et interlocuteurs locaux avant de partir.</p>
+            </div>
+            <span class="planner-aside-index" aria-hidden="true">K · 12°33′ N</span>
+        </aside>
+
+        <noscript><p class="planner-status">Activez JavaScript pour composer votre itinéraire personnalisé.</p></noscript>
+        <p class="planner-status" role="status" aria-live="polite"></p>
+
+        <section class="planner-results" aria-live="polite" aria-label="Votre idée de programme" hidden>
+            <div class="planner-results-heading">
+                <div>
+                    <p class="eyebrow">UNE PREMIÈRE INSPIRATION</p>
+                    <h2>Votre idée de programme</h2>
+                </div>
+                <button class="planner-print" type="button">Imprimer / PDF</button>
+            </div>
+            <div class="planner-days"></div>
+            <p class="planner-disclaimer">Cet itinéraire est indicatif. Les conditions d’accès, la saison et les disponibilités varient : confirmez les informations auprès de guides et interlocuteurs locaux avant chaque sortie.</p>
+        </section>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/planner.js' %}" defer></script>
+{% endblock %}

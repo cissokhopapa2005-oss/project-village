@@ -1,0 +1,71 @@
+{% extends 'village/base.html' %}
+
+{% block title %}FAQ pratique - Kédougou{% endblock %}
+{% block body_class %}page-faq{% endblock %}
+
+{% block content %}
+    <section class="page-heading" data-reveal>
+        <p class="eyebrow">AVANT DE PRENDRE LA ROUTE</p>
+        <h1>Questions fréquentes avant votre séjour</h1>
+        <p>Quelques repères pour préparer vos visites et profiter de la région dans le respect des personnes et des lieux.</p>
+    </section>
+
+    <section class="faq-list" aria-label="Questions fréquentes">
+        <details class="faq-item">
+            <summary>Quelle est la meilleure période pour visiter la région ?</summary>
+            <div class="faq-answer">
+                <p>Les conditions météo, l’état des pistes et l’accès aux sentiers varient selon la période. Avant de fixer vos sorties, renseignez-vous sur les conditions actuelles auprès d’un guide local ou des responsables des sites.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Comment préparer mes déplacements et les visites ?</summary>
+            <div class="faq-answer">
+                <p>Vérifiez votre itinéraire et l’état des routes avant le départ. Pour les cascades, les randonnées et les sites éloignés, demandez conseil à un guide local et confirmez les modalités d’accès auprès des interlocuteurs concernés.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Faut-il prévoir un guide local ?</summary>
+            <div class="faq-answer">
+                <p>Un accompagnement local est conseillé pour préparer les excursions, mieux connaître les lieux et tenir compte des conditions du jour. Vérifiez les disponibilités et les modalités directement avec un guide ou un organisme local.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Puis-je photographier les habitants et les cérémonies ?</summary>
+            <div class="faq-answer">
+                <p>Demandez toujours l’accord des personnes avant de les photographier. Pour les cérémonies et les lieux culturels, demandez aussi l’autorisation des organisateurs ou des personnes responsables, puis respectez leur réponse.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Les villages et les lieux culturels sont-ils librement accessibles ?</summary>
+            <div class="faq-answer">
+                <p>Non, l’accès ne doit pas être présumé. Organisez toute visite avec l’accord des habitants ou des responsables concernés, suivez les consignes locales et respectez les espaces privés et les coutumes.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Les sites touristiques sont-ils toujours ouverts ?</summary>
+            <div class="faq-answer">
+                <p>Les horaires, tarifs, accès et conditions peuvent changer. Confirmez ces informations avant chaque déplacement auprès du site, d’un guide local ou du service compétent. Pour le parc national du Niokolo-Koba, vérifiez également ses règles et modalités de visite.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Peut-on visiter un site d’orpaillage ?</summary>
+            <div class="faq-answer">
+                <p>Les sites d’extraction sont des lieux de travail, pas des attractions touristiques. N’y entrez pas sans autorisation explicite des personnes concernées et ne vous y rendez pas comme simple visiteur.</p>
+            </div>
+        </details>
+    </section>
+
+    <section class="faq-next-step">
+        <div>
+            <p class="eyebrow">BESOIN DE PRÉPARER VOTRE VISITE ?</p>
+            <h2>Composez une première idée de séjour.</h2>
+        </div>
+        <a class="button" href="{% url 'planner' %}">Planifier mon séjour <span aria-hidden="true">→</span></a>
+    </section>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'village/base.html' %}
+{% load static %}
+
+{% block title %}Galerie - Kédougou{% endblock %}
+{% block body_class %}page-gallery{% endblock %}
+
+{% block content %}
+    <section class="page-heading" data-reveal>
+        <p class="eyebrow">UN AVANT-GOÛT DU VOYAGE</p>
+        <h1>Les paysages de Kédougou</h1>
+        <p>Découvrez Kédougou en images : cascades, paysages, patrimoine et activités de la région.</p>
+    </section>
+    <div class="gallery-filter-panel" hidden>
+        <div class="gallery-filters" role="group" aria-label="Filtrer les photos par thème">
+            <button class="gallery-filter is-active" type="button" data-filter="all" aria-pressed="true">Tout voir</button>
+            <button class="gallery-filter" type="button" data-filter="nature" aria-pressed="false">Nature</button>
+            <button class="gallery-filter" type="button" data-filter="landscape" aria-pressed="false">Paysages</button>
+            <button class="gallery-filter" type="button" data-filter="culture" aria-pressed="false">Culture</button>
+            <button class="gallery-filter" type="button" data-filter="activities" aria-pressed="false">Activités</button>
+        </div>
+        <p class="gallery-filter-status" role="status" aria-live="polite"></p>
+    </div>
+
+    <section class="gallery-grid" aria-label="Photos des paysages et des activités de Kédougou">
+        <figure class="gallery-tile gallery-one" data-category="nature">
+            <img src="{% static 'images/cascade.jpg' %}" alt="Cascade et bassin naturel de Kédougou" loading="lazy">
+            <figcaption>La force de l'eau</figcaption>
+        </figure>
+        <figure class="gallery-tile gallery-two" data-category="landscape">
+            <img src="{% static 'images/sud-est-kedougou.jpg' %}" alt="Vue aérienne de la forêt et des cours d'eau du sud-est du Sénégal" loading="lazy">
+            <figcaption>Les paysages du sud-est</figcaption>
+        </figure>
+        <figure class="gallery-tile gallery-three" data-category="activities">
+            <img src="{% static 'images/orpaillage.jpg' %}" alt="Orpailleurs travaillant dans l'eau ocre d'un site d'orpaillage" loading="lazy">
+            <figcaption>L'orpaillage artisanal</figcaption>
+        </figure>
+        <figure class="gallery-tile gallery-four" data-category="landscape">
+            <img src="{% static 'images/savane-heure-doree.jpg' %}" alt="Deux girafes dans la savane au coucher du soleil" loading="lazy">
+            <figcaption>La savane à l'heure dorée</figcaption>
+        </figure>
+        <figure class="gallery-tile gallery-five" data-category="culture">
+            <img src="{% static 'images/pays-bassari.jpg' %}" alt="Rassemblement communautaire lors d'une célébration culturelle dans le Pays bassari" loading="lazy">
+            <figcaption>Une célébration culturelle</figcaption>
+        </figure>
+    </section>
+
+    <dialog class="gallery-lightbox" aria-label="Visionneuse de photos">
+        <div class="lightbox-toolbar">
+            <p class="lightbox-counter" aria-live="polite"></p>
+            <button class="lightbox-close" type="button" aria-label="Fermer la photo">×</button>
+        </div>
+        <div class="lightbox-viewer">
+            <button class="lightbox-arrow lightbox-previous" type="button" aria-label="Photo précédente">←</button>
+            <img class="lightbox-image" alt="">
+            <button class="lightbox-arrow lightbox-next" type="button" aria-label="Photo suivante">→</button>
+        </div>
+        <p class="lightbox-caption"></p>
+    </dialog>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/gallery.js' %}" defer></script>
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends 'village/base.html' %}
+{% load static %}
+{% block title %}Kédougou — Une région à vivre{% endblock %}
+{% block body_class %}page-home{% endblock %}
+
+{% block content %}
+    <section class="hero hero-home atlas-hero" aria-label="Découvrir Kédougou">
+        <div class="home-carousel" role="region" aria-roledescription="carrousel" aria-label="Paysages de Kédougou">
+            <figure class="home-slide is-active" role="group" aria-roledescription="diapositive" aria-label="1 sur 4" aria-hidden="false">
+                <img src="{% static 'images/cascade.jpg' %}" alt="Cascade de Dindéfelo entourée de falaises et de végétation" fetchpriority="high">
+            </figure>
+            <figure class="home-slide" role="group" aria-roledescription="diapositive" aria-label="2 sur 4" aria-hidden="true">
+                <img src="{% static 'images/observer-paysages.jpg' %}" alt="Vallée verdoyante encadrée de falaises de grès" loading="lazy">
+            </figure>
+            <figure class="home-slide" role="group" aria-roledescription="diapositive" aria-label="3 sur 4" aria-hidden="true">
+                <img src="{% static 'images/pays-bassari.jpg' %}" alt="Rassemblement communautaire lors d'une célébration dans le Pays bassari" loading="lazy">
+            </figure>
+            <figure class="home-slide" role="group" aria-roledescription="diapositive" aria-label="4 sur 4" aria-hidden="true">
+                <img src="{% static 'images/sud-est-kedougou.jpg' %}" alt="Forêt et cours d'eau du sud-est du Sénégal" loading="lazy">
+            </figure>
+            <div class="hero-grain" aria-hidden="true"></div>
+            <button class="home-carousel-arrow home-carousel-previous" type="button" aria-label="Photo précédente">←</button>
+            <button class="home-carousel-arrow home-carousel-next" type="button" aria-label="Photo suivante">→</button>
+            <div class="hero-copy">
+                <p class="eyebrow hero-kicker"><span></span> SÉNÉGAL · SUD-EST · 12°33′ N</p>
+                <h1>La beauté<br>à l’état <em>sauvage.</em></h1>
+                <p class="hero-intro">À Kédougou, les cascades tracent leur chemin, les falaises gardent la mémoire et les rencontres donnent le rythme.</p>
+                <a href="{% url 'places' %}" class="button hero-button">Explorer la région <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="hero-side-note" aria-hidden="true"><span>TERRE DE DÉCOUVERTES</span><i></i><span>14°42′ O</span></div>
+            <div class="home-carousel-controls">
+                <p class="home-slide-caption" aria-live="polite">Cascade de Dindéfelo</p>
+                <div class="home-carousel-dots" role="group" aria-label="Choisir une photo">
+                    <button class="home-carousel-dot is-active" type="button" aria-label="Afficher la photo 1" aria-current="true" data-slide-to="0"></button>
+                    <button class="home-carousel-dot" type="button" aria-label="Afficher la photo 2" data-slide-to="1"></button>
+                    <button class="home-carousel-dot" type="button" aria-label="Afficher la photo 3" data-slide-to="2"></button>
+                    <button class="home-carousel-dot" type="button" aria-label="Afficher la photo 4" data-slide-to="3"></button>
+                </div>
+                <button class="home-carousel-pause" type="button" aria-label="Mettre en pause le carrousel" aria-pressed="false">Pause</button>
+            </div>
+        </div>
+        <a class="hero-scroll-cue" href="#intro" aria-label="Défiler pour découvrir"><span>Défiler pour explorer</span><i></i></a>
+        <span class="hero-index" aria-hidden="true">01 <b>/</b> 04</span>
+    </section>
+
+    <section class="intro-section atlas-intro" id="intro" data-reveal>
+        <p class="eyebrow">L’ESPRIT DE KÉDOUGOU</p>
+        <h2>Un bout du monde.<br><em>Un monde à part.</em></h2>
+        <p>Au sud-est du Sénégal, les paysages se déploient entre savanes, forêts et falaises. Ici, la nature se vit au grand air et la découverte se fait dans le respect des communautés.</p>
+        <a class="text-link home-planner-link" href="{% url 'planner' %}">Créer mon itinéraire <span aria-hidden="true">↗</span></a>
+        <span class="intro-stamp" aria-hidden="true">KÉDOUGOU<br>12°33′ N<br>TERRE VIVANTE</span>
+    </section>
+
+    <section class="home-editorial" aria-label="Paysages de Kédougou">
+        <figure class="editorial-image editorial-image-tall" data-parallax>
+            <img src="{% static 'images/sud-est-kedougou.jpg' %}" alt="Forêt et cours d’eau du sud-est du Sénégal" loading="lazy">
+            <figcaption><span>01 — LES GRANDS ESPACES</span><span>Le sud-est, au fil de l’eau</span></figcaption>
+        </figure>
+        <div class="editorial-note" data-reveal>
+            <span class="editorial-note-number">01 / 03</span>
+            <p class="eyebrow">UNE NATURE GÉNÉREUSE</p>
+            <h2>Des horizons qui s’ouvrent, des chemins qui invitent.</h2>
+            <p>Des cascades de Dindéfelo aux reliefs du Pays bassari, chaque détour révèle un nouveau visage de la région.</p>
+            <a class="text-link" href="{% url 'places' %}">Voir les lieux à découvrir <span aria-hidden="true">↗</span></a>
+        </div>
+        <figure class="editorial-image editorial-image-wide" data-parallax>
+            <img src="{% static 'images/savane-heure-doree.jpg' %}" alt="La savane à l’heure dorée" loading="lazy">
+            <figcaption><span>LA SAVANE À L’HEURE DORÉE</span><span>Kédougou · Sénégal</span></figcaption>
+        </figure>
+    </section>
+
+    <section class="home-video-section atlas-film" aria-labelledby="home-video-title" data-reveal>
+        <div class="home-video-copy">
+            <p class="eyebrow">KÉDOUGOU EN IMAGES · 02:18</p>
+            <h2 id="home-video-title">Prenez le temps<br>de <em>regarder.</em></h2>
+            <p>Une invitation à découvrir les paysages et l’atmosphère de Kédougou.</p>
+        </div>
+        <div class="home-video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/7F00jZ-oonw" title="Découvrir Kédougou en vidéo" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <a class="home-video-fallback" href="https://www.youtube.com/watch?v=7F00jZ-oonw" target="_blank" rel="noopener noreferrer">Ouvrir la vidéo sur YouTube <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <section class="home-discover" aria-label="Découvrir Kédougou">
+        <div class="discover-heading" data-reveal>
+            <p class="eyebrow">LES PAGES DE L’ATLAS</p>
+            <h2>Une région,<br><em>mille façons de la vivre.</em></h2>
+        </div>
+        <div class="feature-grid atlas-feature-grid">
+            <a class="feature-card feature-history" href="{% url 'history' %}">
+                <img class="feature-card-image" src="{% static 'images/cultures-locales.jpg' %}" alt="" aria-hidden="true" loading="lazy">
+                <span class="feature-number">01 — MÉMOIRE</span><h3>Une histoire vivante</h3><span>Découvrir les peuples et les traditions <b>↗</b></span>
+            </a>
+            <a class="feature-card feature-nature" href="{% url 'places' %}">
+                <img class="feature-card-image" src="{% static 'images/cascade.jpg' %}" alt="" aria-hidden="true" loading="lazy">
+                <span class="feature-number">02 — TERRITOIRE</span><h3>Des lieux remarquables</h3><span>Explorer les sites naturels et culturels <b>↗</b></span>
+            </a>
+            <a class="feature-card feature-activities" href="{% url 'activities' %}">
+                <img class="feature-card-image" src="{% static 'images/randonnee-nature.jpg' %}" alt="" aria-hidden="true" loading="lazy">
+                <span class="feature-number">03 — RENCONTRES</span><h3>Des expériences à vivre</h3><span>Imaginer votre prochaine escapade <b>↗</b></span>
+            </a>
+        </div>
+    </section>
+    <section class="home-outro" data-reveal>
+        <p class="eyebrow">L’AVENTURE PREND FORME ICI</p>
+        <h2>Et si vous preniez<br>la route de <em>Kédougou ?</em></h2>
+        <a class="button" href="{% url 'planner' %}">Imaginer mon séjour <span aria-hidden="true">↗</span></a>
+    </section>
+{% endblock %}
+
+{% block scripts %}<script src="{% static 'js/home-carousel.js' %}" defer></script>{% endblock %}

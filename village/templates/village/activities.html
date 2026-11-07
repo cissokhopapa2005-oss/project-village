@@ -1,0 +1,86 @@
+{% extends 'village/base.html' %}
+{% load static %}
+
+{% block title %}Activités - Kédougou{% endblock %}
+{% block body_class %}page-activities{% endblock %}
+
+{% block content %}
+    <section class="page-heading" data-reveal>
+        <p class="eyebrow">PRENDRE LE TEMPS</p>
+        <h1>Des expériences à vivre</h1>
+        <p>Composez votre séjour au rythme de la nature et des rencontres. Les activités dépendent de la saison et des conditions locales.</p>
+    </section>
+
+    <section class="activity-photo">
+        <img src="{% static 'images/cascade.jpg' %}" alt="Cascade de Kédougou, cadre naturel pour une excursion accompagnée" fetchpriority="high">
+        <div>
+            <p class="eyebrow">AU FIL DE L'EAU</p>
+            <h2>La nature se découvre à son rythme.</h2>
+            <p>Prévoyez une excursion avec un guide local et vérifiez les conditions d'accès avant de partir.</p>
+        </div>
+    </section>
+
+    <section class="activity-list">
+        <article class="activity-item activity-item-featured">
+            <div class="activity-item-content">
+                <figure class="activity-image">
+                    <img src="{% static 'images/randonnee-nature.jpg' %}" alt="Groupe de randonneurs marchant sur un sentier en forêt" loading="lazy">
+                    <figcaption><span>01</span> Escapade nature</figcaption>
+                </figure>
+                <div>
+                    <p class="eyebrow">AVENTURE ACCOMPAGNÉE</p>
+                    <h2>Marcher en pleine nature</h2>
+                    <p>Partez à la découverte des sentiers et des paysages de la région. Pour une sortie agréable et responsable, faites-vous accompagner par un guide local et renseignez-vous sur la difficulté, la météo et l'état des chemins.</p>
+                    <div class="activity-tags"><span>Guide local conseillé</span><span>Accès selon la saison</span></div>
+                </div>
+            </div>
+        </article>
+        <article class="activity-item activity-item-featured">
+            <div class="activity-item-content">
+                <figure class="activity-image">
+                    <img src="{% static 'images/cultures-locales.jpg' %}" alt="Femmes en tenue traditionnelle lors d'une célébration culturelle" loading="lazy">
+                    <figcaption><span>02</span> Patrimoine vivant</figcaption>
+                </figure>
+                <div>
+                    <p class="eyebrow">RENCONTRES ET TRADITIONS</p>
+                    <h2>Découvrir les cultures locales</h2>
+                    <p>Découvrez les traditions, les récits et les savoir-faire de la région à travers des rencontres préparées avec les communautés. Demandez toujours l’accord des personnes avant de prendre des photos et respectez les coutumes locales.</p>
+                    <div class="activity-tags"><span>Rencontres avec accord</span><span>Respect des coutumes</span></div>
+                </div>
+            </div>
+        </article>
+        <article class="activity-item activity-item-featured">
+            <div class="activity-item-content">
+                <figure class="activity-image">
+                    <img src="{% static 'images/observer-paysages.jpg' %}" alt="Vallée verdoyante encadrée de falaises de grès" loading="lazy">
+                    <figcaption><span>03</span> Panoramas & grands espaces</figcaption>
+                </figure>
+                <div>
+                    <p class="eyebrow">PRENDRE DE LA HAUTEUR</p>
+                    <h2>Observer les paysages</h2>
+                    <p>Admirez les falaises, les vallées et les cours d’eau depuis les points de vue accessibles avec un accompagnateur local. Les paysages changent au fil des saisons : renseignez-vous sur les accès et profitez des lumières du matin ou de fin de journée.</p>
+                    <div class="activity-tags"><span>Points de vue locaux</span><span>Respect des espaces naturels</span></div>
+                </div>
+            </div>
+        </article>
+        <article class="activity-item activity-item-featured activity-item-cuisine">
+            <div class="cuisine-content">
+                <div class="cuisine-copy">
+                    <p class="eyebrow">CUISINE ET CONVIVIALITÉ</p>
+                    <h2>Goûter aux saveurs de la région</h2>
+                    <p>Découvrez les plats et les produits locaux auprès des restaurateurs et des familles qui accueillent les visiteurs. Partager un repas est aussi une belle façon de découvrir la région.</p>
+                </div>
+                <div class="cuisine-gallery" aria-label="Photos de plats à partager">
+                    <figure>
+                        <img src="{% static 'images/saveurs-kedougou-1.jpg' %}" alt="Plat de poulet accompagné de riz" loading="lazy">
+                        <figcaption>Un plat à partager</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="{% static 'images/saveurs-kedougou-2.jpg' %}" alt="Plat en sauce servi avec du riz" loading="lazy">
+                        <figcaption>Saveurs généreuses</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </article>
+    </section>
+{% endblock %}

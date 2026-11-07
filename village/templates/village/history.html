@@ -1,0 +1,84 @@
+{% extends 'village/base.html' %}
+{% load static %}
+
+{% block title %}Histoire et cultures - Kédougou{% endblock %}
+{% block body_class %}page-history{% endblock %}
+
+{% block content %}
+    <section class="page-heading" data-reveal>
+        <p class="eyebrow">MÉMOIRE ET TRANSMISSION</p>
+        <h1>Une région façonnée par ses cultures</h1>
+        <p>Dans le sud-est du Sénégal, l’histoire de Kédougou se raconte à travers ses communautés, ses paysages et des traditions toujours vivantes.</p>
+    </section>
+
+    <section class="home-video-section" aria-labelledby="history-video-title">
+        <div class="home-video-copy">
+            <p class="eyebrow">HISTOIRE DE KÉDOUGOU</p>
+            <h2 id="history-video-title">L’histoire et la fondation de Kédougou</h2>
+            <p>Découvrez cette vidéo consacrée aux origines de la ville.</p>
+        </div>
+        <div class="home-video-frame">
+            <iframe
+                src="https://www.youtube-nocookie.com/embed/QwuB8REbhrU"
+                title="Histoire et fondation de Kédougou"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="encrypted-media; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <a class="home-video-fallback" href="https://www.youtube.com/watch?v=QwuB8REbhrU" target="_blank" rel="noopener noreferrer">
+            Ouvrir la vidéo sur YouTube <span aria-hidden="true">↗</span>
+        </a>
+    </section>
+
+    <section class="history-intro">
+        <img src="{% static 'images/cultures-locales.jpg' %}" alt="Femmes en tenue traditionnelle lors d'une célébration culturelle" fetchpriority="high">
+        <div class="history-intro-copy">
+            <p class="eyebrow">UN PATRIMOINE VIVANT</p>
+            <h2>Des cultures, des récits et des savoir-faire</h2>
+            <p>Les communautés bassari, bédik et peules font partie de la richesse culturelle de la région. Leurs langues, leurs pratiques et leurs connaissances du territoire composent une histoire vivante, transmise au fil des générations.</p>
+            <p>Cette photo évoque une célébration culturelle ; elle n’est pas présentée comme une documentation d’un rite particulier de Kédougou.</p>
+        </div>
+    </section>
+
+    <section class="heritage-section">
+        <div class="heritage-copy">
+            <p class="eyebrow">RECONNAISSANCE INTERNATIONALE</p>
+            <h2>Le Pays bassari, un paysage culturel exceptionnel</h2>
+            <p>Le « Pays bassari : paysages culturels Bassari, Peul et Bédik » est inscrit sur la Liste du patrimoine mondial de l’UNESCO depuis 2012. Cette reconnaissance met en valeur un patrimoine où les paysages et les cultures sont étroitement liés.</p>
+            <a class="text-link" href="https://whc.unesco.org/fr/list/1407/" target="_blank" rel="noopener noreferrer">Découvrir la fiche UNESCO <span aria-hidden="true">↗</span></a>
+        </div>
+        <img src="{% static 'images/pays-bassari.jpg' %}" alt="Rassemblement communautaire lors d'une célébration dans le Pays bassari" loading="lazy">
+    </section>
+
+    <section class="history-timeline" aria-label="Repère historique">
+        <span class="timeline-date">2012</span>
+        <div>
+            <p class="eyebrow">UN REPÈRE À RETENIR</p>
+            <h2>Inscription au patrimoine mondial</h2>
+            <p>L’UNESCO inscrit le Pays bassari sur la Liste du patrimoine mondial. Ce repère souligne l’importance de préserver les paysages et le patrimoine culturel avec les communautés concernées.</p>
+        </div>
+    </section>
+
+    <section class="notice">
+        <strong>Découvrir avec respect</strong>
+        <p>Les visites de villages et de lieux culturels se font avec l’accord des habitants. Demandez conseil à un guide local et respectez les coutumes, les personnes et les espaces privés.</p>
+    </section>
+
+    <section class="gold-feature history-gold-feature">
+        <img src="{% static 'images/orpaillage.jpg' %}" alt="Orpailleurs au travail, activité contemporaine de la région" loading="lazy">
+        <div>
+            <p class="eyebrow">KÉDOUGOU AUJOURD’HUI</p>
+            <h2>L’orpaillage, une activité contemporaine</h2>
+            <p>L’exploitation de l’or fait aussi partie de la vie économique actuelle de la région. C’est une réalité distincte du patrimoine historique : les sites de travail ne sont pas des lieux touristiques et leur accès nécessite l’autorisation des personnes concernées.</p>
+        </div>
+    </section>
+
+    <section class="history-footer-cta">
+        <div>
+            <p class="eyebrow">POURSUIVRE LA DÉCOUVERTE</p>
+            <h2>Les paysages racontent aussi l’histoire de la région.</h2>
+        </div>
+        <a class="button" href="{% url 'gallery' %}">Voir la galerie <span aria-hidden="true">→</span></a>
+    </section>
+{% endblock %}

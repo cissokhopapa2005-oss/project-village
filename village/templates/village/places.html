@@ -1,0 +1,37 @@
+{% extends 'village/base.html' %}
+{% load static %}
+
+{% block title %}À visiter - Kédougou{% endblock %}
+{% block body_class %}page-places{% endblock %}
+
+{% block content %}
+    <section class="page-heading" data-reveal>
+        <p class="eyebrow">NATURE ET PATRIMOINE</p>
+        <h1>À voir autour de Kédougou</h1>
+        <p>Des sites naturels et culturels à découvrir dans la région. Renseignez-vous localement sur les accès et les conditions de visite.</p>
+    </section>
+
+    <section class="place-grid">
+        <article class="place-card">
+            <div class="place-art"><img src="{% static 'images/cascade.jpg' %}" alt="Cascade de Kédougou entourée de falaises et de végétation" loading="lazy"><span>01</span></div>
+            <div class="place-copy"><p class="eyebrow">NATURE</p><h2>La cascade de Dindéfelo</h2><p>Une chute d'eau emblématique nichée dans un écrin de verdure, au sud-est du Sénégal. La visite se prépare avec un guide local.</p></div>
+        </article>
+        <article class="place-card">
+            <div class="place-art"><img src="{% static 'images/pays-bassari.jpg' %}" alt="Célébration et rassemblement communautaire dans le Pays bassari" loading="lazy"><span>02</span></div>
+            <div class="place-copy"><p class="eyebrow">PATRIMOINE</p><h2>Le Pays bassari</h2><p>Un paysage culturel exceptionnel, marqué par les traditions des communautés bassari, peul et bédik, inscrit au patrimoine mondial de l'UNESCO.</p></div>
+        </article>
+        <article class="place-card">
+            <div class="place-art"><img src="{% static 'images/niokolo-koba.jpg' %}" alt="Paysage de forêt et de cours d'eau dans le parc national du Niokolo-Koba" loading="lazy"><span>03</span></div>
+            <div class="place-copy"><p class="eyebrow">GRANDS ESPACES</p><h2>Le parc national du Niokolo-Koba</h2><p>Un vaste espace naturel du sud-est du Sénégal, reconnu pour sa biodiversité. Vérifiez les ouvertures, les accès et les règles du parc avant le départ.</p></div>
+        </article>
+    </section>
+
+    <section class="gold-feature">
+        <img src="{% static 'images/orpaillage.jpg' %}" alt="Orpailleurs travaillant dans l'eau ocre d'un site d'orpaillage" loading="lazy">
+        <div>
+            <p class="eyebrow">UNE RÉGION AUSSI MARQUÉE PAR L'OR</p>
+            <h2>L'or, une activité importante du territoire</h2>
+            <p>L'orpaillage fait partie de l'économie de la région et du quotidien de nombreuses communautés. Les sites d'extraction ne sont pas des attractions touristiques : renseignez-vous sur les accès et ne vous y rendez qu'avec une autorisation ou un guide local.</p>
+        </div>
+    </section>
+{% endblock %}
